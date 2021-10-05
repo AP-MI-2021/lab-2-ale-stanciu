@@ -14,7 +14,7 @@ def is_palindrome(n):
     return False
 
 def test_is_palindrome():
-    #assert (565) == True
+    assert (565) == True
     assert (567) == False
 
 def is_prime(n):
