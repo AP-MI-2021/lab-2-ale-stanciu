@@ -83,7 +83,7 @@ def main():
         else:
             print("optiune gresita!")
 if __name__ == '__main__':
-main()
+    main()
 
 
 
