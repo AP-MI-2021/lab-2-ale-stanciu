@@ -20,7 +20,7 @@ def test_is_palindrome():
 def is_prime(n):
     """
     determina daca un numar este prim
-    :param n: ün numar intreg
+    :param n: Un numar intreg
     :return: True, daca n este prim, False in caz contrar
     """
     if n<2:
@@ -28,7 +28,7 @@ def is_prime(n):
     for i in range(2,n//2+1):
         if n%i==0:
             return False
-        return True
+    return True
 
 def is_superprime(n):
     """
@@ -46,17 +46,37 @@ def test_is_superprime():
     assert (73) == True
     assert (246) == False
 
+def get_largest_prime_below(n):
+    """
+    gaseste ultimul număr prim mai mic decât un număr dat
+    :param n: un numar intreg
+    :return: ultimul număr prim mai mic decât un număr dat
+    """
+    for i in range(n-1, 2, -1):
+        if is_prime(i)==True:
+            return i
+    print("Nu exista un astfel de numar")
+
+def test_get_largest_prime_below():
+    assert (3) == "Nu exista un astfel de numar"
+    assert (32) == 31
+    assert (10) == 7
+
 shouldRun=True
 while shouldRun:
-    print('1. Determină dacă un număr dat este palindrom.')
-    print('2. Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime.')
-    optiune=input ('Dati optiunea:')
+    print("1. Determină dacă un număr dat este palindrom.")
+    print("2. Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime.")
+    print("3. Găsește ultimul număr prim mai mic decât un număr dat.")
+    optiune=input ("Dati optiunea:")
     if optiune == "1":
         n = int(input("Dati un numar:"))
         print(is_palindrome(n))
     elif optiune == "2":
         x = int(input("Dati un numar:"))
         print(is_superprime(x))
+    elif optiune == "3":
+        a = int(input("Dati un numar:"))
+        print(get_largest_prime_below(a))
     elif optiune == "x":
         shouldRun = False
     else:
