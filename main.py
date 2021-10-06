@@ -62,25 +62,29 @@ def test_get_largest_prime_below():
     assert (32) == 31
     assert (10) == 7
 
-shouldRun=True
-while shouldRun:
-    print("1. Determină dacă un număr dat este palindrom.")
-    print("2. Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime.")
-    print("3. Găsește ultimul număr prim mai mic decât un număr dat.")
-    optiune=input ("Dati optiunea:")
-    if optiune == "1":
-        n = int(input("Dati un numar:"))
-        print(is_palindrome(n))
-    elif optiune == "2":
-        x = int(input("Dati un numar:"))
-        print(is_superprime(x))
-    elif optiune == "3":
-        a = int(input("Dati un numar:"))
-        print(get_largest_prime_below(a))
-    elif optiune == "x":
-        shouldRun = False
-    else:
-        print("optiune gresita!")
+def main():
+    shouldRun = True
+    while shouldRun:
+        print("1. Determină dacă un număr dat este palindrom.")
+        print("2. Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime.")
+        print("3. Găsește ultimul număr prim mai mic decât un număr dat.")
+        optiune = input("Dati optiunea:")
+        if optiune == "1":
+            n = int(input("Dati un numar:"))
+            print(is_palindrome(n))
+        elif optiune == "2":
+            x = int(input("Dati un numar:"))
+            print(is_superprime(x))
+        elif optiune == "3":
+            a = int(input("Dati un numar:"))
+            print(get_largest_prime_below(a))
+        elif optiune == "x":
+            shouldRun = False
+        else:
+            print("optiune gresita!")
+if __name__ == '__main__':
+main()
+
 
 
 
